@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Board</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef1f7;
+      margin: 0;
+      padding: 15px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .section h2 {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .staff-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .staff-name {
+      font-weight: bold;
+      width: 40%;
+    }
+
+    .status-select {
+      width: 55%;
+    }
+
+    select {
+      width: 100%;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px;
+      border: none;
+      background: #4a7cff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #355edc;
+    }
+
+    .note {
+      text-align: center;
+      font-style: italic;
+      font-size: 13px;
+      color: #555;
+      margin-top: 20px;
+    }
+
+    /* Mobile adjustment */
+    @media (max-width: 600px) {
+      .staff-name, .status-select {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h1>📌 Attendance Board</h1>
+
+<!-- ADMIN -->
+<div class="section">
+  <h2>ADMIN - 3 PERSONS</h2>
+
+  <div class="staff-row">
+    <div class="staff-name">Zaleha</div>
+    <div class="status-select">
+      <select>
+        <option>Present</option>
+        <option selected>OD</option>
+        <option>AL</option>
+        <option>MC</option>
+        <option>EL</option>
+        <option>CL</option>
+        <option>CP</option>
+        <option>CT</option>
+        <option>MIA</option>
+        <option>LEWAT</option>
+      </select>
+    </div>
+  </div>
+
+  <button onclick="addStaff(this)">➕ Add Staff</button>
+</div>
+
+<!-- B&P -->
+<div class="section">
+  <h2>B&P - 2 PERSONS</h2>
+
+  <div class="staff-row">
+    <div class="staff-name">Yusry</div>
+    <div class="status-select">
+      <select>
+        <option>Present</option>
+        <option>OD</option>
+        <option selected>AL</option>
+        <option>MC</option>
+        <option>EL</option>
+        <option>CL</option>
+        <option>CP</option>
+        <option>CT</option>
+        <option>MIA</option>
+        <option>LEWAT</option>
+      </select>
+    </div>
+  </div>
+
+  <button onclick="addStaff(this)">➕ Add Staff</button>
+</div>
+
+<!-- SERVICE TECHNICIAN -->
+<div class="section">
+  <h2>SERVICE TECHNICIAN - 20 PERSONS</h2>
+
+  <div class="staff-row">
+    <div class="staff-name">Erickson</div>
+    <div class="status-select">
+      <select>
+        <option>Present</option>
+        <option selected>OD</option>
+        <option>AL</option>
+        <option>MC</option>
+        <option>EL</option>
+        <option>CL</option>
+        <option>CP</option>
+        <option>CT</option>
+        <option>MIA</option>
+        <option>LEWAT</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="staff-row">
+    <div class="staff-name">Huszairi</div>
+    <div class="status-select">
+      <select>
+        <option>Present</option>
+        <option selected>OD</option>
+        <option>AL</option>
+        <option>MC</option>
+        <option>EL</option>
+        <option>CL</option>
+        <option>CP</option>
+        <option>CT</option>
+        <option>MIA</option>
+        <option>LEWAT</option>
+      </select>
+    </div>
+  </div>
+
+  <button onclick="addStaff(this)">➕ Add Staff</button>
+</div>
+
+<p class="note">
+*Segala perubahan mohon inform untuk saya update di Attendance Board di bawah. Terima kasih.*
+</p>
+
+<script>
+function addStaff(button) {
+  let section = button.parentElement;
+
+  let newRow = document.createElement("div");
+  newRow.
+
+className = "staff-row";
+
+  newRow.innerHTML = `
+    <div class="staff-name">
+      <input type="text" placeholder="Enter Name" style="width:100%; padding:6px;">
+    </div>
+    <div class="status-select">
+      <select>
+        <option>Present</option>
+        <option>OD</option>
+        <option>AL</option>
+        <option>MC</option>
+        <option>EL</option>
+        <option>CL</option>
+        <option>CP</option>
+        <option>CT</option>
+        <option>MIA</option>
+        <option>LEWAT</option>
+      </select>
+    </div>
+  `;
+
+  section.insertBefore(newRow, button);
+}
+</script>
+
+</body>
+</html>
